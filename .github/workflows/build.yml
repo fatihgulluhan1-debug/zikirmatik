@@ -21,9 +21,11 @@ jobs:
         with:
           channel: 'stable'
 
-      - name: Pre-build Setup
-        run: flutter create . --force
+      - name: Configure Android Project
+        run: |
+          flutter create . --force --project-name=zikirmatik
+          cd android
+          echo "org.gradle.jvmargs=-Xmx1536m" > gradle.properties
 
       - name: Build AAB
         run: flutter build appbundle --release
-        
