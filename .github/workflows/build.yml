@@ -22,4 +22,4 @@ jobs:
           channel: 'stable'
           
       - name: Build AAB
-        run: flutter build appbundle --release --no-validate-project
+        run: flutter build appbundle --release
