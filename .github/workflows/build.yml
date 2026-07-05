@@ -20,11 +20,6 @@ jobs:
         uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
-
-      - name: Create Structure
-        run: |
-          mkdir -p android/app
-          mv main.dart lib/main.dart
           
       - name: Build AAB
-        run: flutter build appbundle --release --no-pub --no-validate-project
+        run: flutter build appbundle --release --no-validate-project
