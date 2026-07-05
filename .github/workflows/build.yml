@@ -21,5 +21,16 @@ jobs:
         with:
           channel: 'stable'
 
+      - name: Initialize Flutter Project
+        run: |
+          rm -rf pubspec.yaml
+          flutter create . --project-name=zikirmatik --offline
+
+      - name: Restore Custom Main
+        run: |
+          mkdir -p lib
+          # Ana dizine yanlışlıkla yedeklenen dosyalar varsa temizle
+          rm -f main.dart zikirmatik
+
       - name: Build AAB
         run: flutter build appbundle --release
