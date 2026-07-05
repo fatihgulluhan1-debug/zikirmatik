@@ -20,6 +20,10 @@ jobs:
         uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
-          
+
+      - name: Pre-build Setup
+        run: flutter create . --force
+
       - name: Build AAB
         run: flutter build appbundle --release
+        
